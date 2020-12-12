@@ -28,6 +28,16 @@ namespace RandPass.Controllers
             }
             int? count = HttpContext.Session.GetInt32("Count");
             ViewBag.Count = count;
+            // **********
+            string Code = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            string NewString = "";
+            Random rand = new Random();
+            rand.Next(0, Code.Length);
+            for (var i = 0; i < 15; i++)
+            {
+                NewString += Code[rand.Next(0, Code.Length)];
+            }
+            ViewBag.NewString = NewString;
             return View();
         }
 
@@ -59,3 +69,5 @@ namespace RandPass.Controllers
         }
     }
 }
+
+

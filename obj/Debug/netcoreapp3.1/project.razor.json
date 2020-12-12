@@ -14420,11 +14420,6 @@
       "FilePath": "/Users/creative/Documents/Development/coding_dojo/c_sharp_stack/RandPass/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/creative/Documents/Development/coding_dojo/c_sharp_stack/RandPass/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

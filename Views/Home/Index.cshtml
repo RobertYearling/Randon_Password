@@ -9,13 +9,19 @@
     <h1>You have visitied this sire @ViewBag.Count times</h1>
 </div> *@
 
-@if(ViewBag.Count == 1)
-{
-    <h1>You have visited this site @ViewBag.COunt times</h1>
-}
-else
-{
-    <h1>You have visited this site @ViewBag.COunt times</h1>
-}
-<a href="/increment" class="btn btn-info btn-outline-warning">Generate</a>
-<a href="/reset" class="btn btn-info btn-outline-warning">Clear</a>
+
+
+<div class="text-center">
+    @if(ViewBag.Count == 1)
+    {
+        <h4>Random passcode (passcode #@ViewBag.Count)</h4>
+    }
+    else
+    {
+        <h4>Random passcode (passcode #@ViewBag.Count)</h4>
+    }
+    <p id="text_field" class="mx-auto">@ViewBag.NewString</p>
+    <a href="/increment" class="btn btn-info">Generate</a>
+    @* <a href="/reset" class="btn btn-info btn-outline-warning">Clear</a> *@
+</div>
+
