@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RandPass.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace RandPass.Controllers
 {
@@ -18,9 +19,32 @@ namespace RandPass.Controllers
             _logger = logger;
         }
 
+        [HttpGet("")]
         public IActionResult Index()
         {
+            if(HttpContext.Session.GetInt32("Count") == null)
+            {
+                HttpContext.Session.SetInt32("Count", 1);
+            }
+            int? count = HttpContext.Session.GetInt32("Count");
+            ViewBag.Count = count;
             return View();
+        }
+
+        [HttpGet("increment")]
+        public IActionResult Increment()
+        {
+            int? count = HttpContext.Session.GetInt32("Count");
+            count++;
+            HttpContext.Session.SetInt32("Count", (int)count);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet("reset")]
+        public IActionResult Reset()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()

@@ -1,8 +1,21 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Random Passcode Generator";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@* <div class="text-center">
+    <h2>Random passcode (passcode #1)</h2>
+    <input type="text">
+    <input type="submit" value="Generate">
+    <h1>You have visitied this sire @ViewBag.Count times</h1>
+</div> *@
+
+@if(ViewBag.Count == 1)
+{
+    <h1>You have visited this site @ViewBag.COunt times</h1>
+}
+else
+{
+    <h1>You have visited this site @ViewBag.COunt times</h1>
+}
+<a href="/increment" class="btn btn-info btn-outline-warning">Generate</a>
+<a href="/reset" class="btn btn-info btn-outline-warning">Clear</a>
